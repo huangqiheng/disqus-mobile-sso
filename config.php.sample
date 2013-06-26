@@ -1,0 +1,13 @@
+<?php
+
+define('COOKIES_PATH', dirname(__FILE__).'/cookies');
+define('CACHES_PATH',  dirname(__FILE__).'/caches');
+
+define('DISCUZ_URL', 'http://bbs.xxxx.com/');
+define('DISCUZ_CHECK_URL', 'http://bbs.xxxx.com/home.php?mod=spacecp');
+define('DISCUZ_CHECK_REGEX', '/您需要先登录才能继续本操作/');
+define('DISCUZ_LOGIN_URL', 'http://bbs.xxxx.com/member.php?mod=logging&action=login');
+define('DISCUZ_LOGIN_REGEX', '/欢迎您回来[\S\s]+?现在将转入登录前页面/');
+
+
+?>
