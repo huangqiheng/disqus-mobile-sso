@@ -1,3 +1,5 @@
 config.php
+*.swp
+*.swo
 *.cookie
 *.cache
