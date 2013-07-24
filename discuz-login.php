@@ -81,14 +81,14 @@ function discuz_login($username, $password)
 	if(!empty($matches)) {    
 		$post_fields['formhash'] = $matches[1];    
 	} else {    
-		return 1;
+		return 1001;
 	}    
 
 	preg_match('/<input\s+type="hidden"\s*name="referer"\s*value="(.*?)"\s*\/>/i', $contents, $matches);    
 	if(!empty($matches)) {    
 		$post_fields['referer'] = $matches[1];    
 	} else {    
-		return 2;
+		return 1002;
 	}    
 
 
@@ -96,7 +96,7 @@ function discuz_login($username, $password)
 	if(!empty($matches)) {    
 		$login_url = preg_replace('/&amp;/i', '&', DISCUZ_URL.$matches[1]);   
 	} else {    
-		return 3;
+		return 1003;
 	}    
 
 	list($cookie_file, $account_file) = get_paths($username);
@@ -117,7 +117,7 @@ function discuz_login($username, $password)
 		if (file_exists($cookie_file)) {
 			unlink($cookie_file);
 		}
-		return 4;
+		return 1004;
 	}
 
 	//echo htmlspecialchars($login_contents);

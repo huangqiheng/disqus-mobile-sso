@@ -6,12 +6,13 @@ $username = $_GET['user'];
 $password = $_GET['pass'];
 
 if (!is_cookie_valid($username)) {
-	if (discuz_login($username, $password) != 0) {
-		die('login failure');
+	$err_no = discuz_login($username, $password);
+	if ($err_no !== 0) {
+		die(json_encode(array('status'=>'error', 'error'=>errstr($err_no))));
 	}
 }
 
-
-echo discuz_get($username, $proxy_url);
+$content = discuz_get($username, $proxy_url);
+echo package_result($content);
 
 ?>
