@@ -8,7 +8,7 @@ $password = $_GET['pass'];
 if (!is_cookie_valid($username)) {
 	$err_no = discuz_login($username, $password);
 	if ($err_no !== 0) {
-		die(json_encode(array('status'=>'error', 'error'=>errstr($err_no))));
+		die(json_encode(array('status'=>'error', 'errno'=>$err_no, 'error'=>errstr($err_no))));
 	}
 }
 

@@ -59,6 +59,10 @@ function discuz_get($username, $url)
 
 function discuz_login($username, $password)
 {
+	if (empty($password)) {
+		return 1005;
+	}
+	
 	$post_fields = array();    
 	$post_fields['loginfield'] = 'username';    
 	$post_fields['loginsubmit'] = 'true';    

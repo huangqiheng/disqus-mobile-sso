@@ -8,6 +8,7 @@ function errstr($errno)
 		case 1002: return 'discuz_login referer error';
 		case 1003: return 'discuz_login get action url error';
 		case 1004: return 'discuz_login username or password error';
+		case 1005: return 'discuz_login need password for login again';
 		default: return 'no error';
 	}
 }
