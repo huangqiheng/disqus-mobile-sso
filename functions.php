@@ -24,6 +24,7 @@ function package_result($content)
 	$json_arr = json_decode($content, true);
 
 	if (json_last_error() === JSON_ERROR_NONE) { 
+		header('content-type: application/json; charset=utf-8');
 		return json_encode(array('status'=>'ok', 'content'=>$json_arr));
 	} else { 
 		return json_encode(array('status'=>'ok', 'content'=>$content));
